@@ -26,8 +26,8 @@ See deployment for notes on how to deploy the project on a live system.
 3. Once approved you will receive an consumer key and a consumer secret which you can use when filling out the application.yml file below.
 
 ## Obtain a Google Maps API key
-1. Navigate to https://developers.google.com/maps/documentation/javascript/get-api-key?refresh=1&pli=1 and select Get API Key
-2. Login and save your key (Up to 2500 calls a day is free)
+1. Navigate to https://developers.google.com/maps/documentation/javascript/get-api-key?refresh=1&pli=1 and select Get A Key
+2. Login and save your key for use in the application.yml file (Up to 2500 calls a day is free)
 
 ## Creating Watson Work Services App
 
