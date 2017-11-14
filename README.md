@@ -56,7 +56,8 @@ Note the Watson Conversation service user name and password, as you will
 need to configure the ticketmaster app with them.
 
 From the Watson Conversation service page click **Launch tool** to open
-the Watson Conversation tooling, and import the file **watson.json** that 
+the Watson Conversation tooling, 
+When you get to the Workspaces screen, click on up arrow next to the Create button and import the file **watson.json** that 
 is in the root of this repository, into a new Watson Conversation workspace.
 
 Note the Watson Conversation workspace id, as you will need to configure this
