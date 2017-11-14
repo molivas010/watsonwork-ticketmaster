@@ -25,6 +25,10 @@ See deployment for notes on how to deploy the project on a live system.
 2. Follow the steps to create an account and request api access.
 3. Once approved you will receive an consumer key and a consumer secret which you can use when filling out the application.yml file below.
 
+## Obtain a Google Maps API key
+1. Navigate to https://developers.google.com/maps/documentation/javascript/get-api-key?refresh=1&pli=1 and select Get API Key
+2. Login and save your key (Up to 2500 calls a day is free)
+
 ## Creating Watson Work Services App
 
 1. In your Web browser, go to [Watson Work Services / Apps](https://developer.watsonwork.ibm.com/apps)
@@ -61,6 +65,7 @@ app with it.
 ### Running locally using IntelliJ IDEA
 
 Prerequisite for running the app using IntelliJ IDEA:
+- Install IntelliJ IDEA Community Edition first if you don't have it (https://www.jetbrains.com/idea/download)
 - Install [Lombok Plugin](https://plugins.jetbrains.com/plugin/6317-lombok-plugin) for IntelliJ IDEA
 - Install [Ngrok](https://ngrok.com/) - used for testing the app locally without deploying on any PaaS
 
@@ -74,10 +79,10 @@ Prerequisite for running the app using IntelliJ IDEA:
 ```yaml
     watsonwork:
             webhook:
-                secret: ${WEBHOOK_SECRET:of7bs9evq4lnbi9slg0qq2k7z6nsfk7y} #replace of7bs9evq4lnbi9slg0qq2k7z6nsfk7y with your webhook secret 
+                secret: ${WEBHOOK_SECRET:yourkey} #replace yourkey with your webhook secret 
             app:
-                id: ${APP_ID:c79e3474-e963-4024-aa47-4a1087903381} #replace c79e3474-e963-4024-aa47-4a1087903381 with your app Id 
-                secret: ${APP_SECRET:javltqgjfvjh2d99zj5bjdfr0q4x5lw3} #replace javltqgjfvjh2d99zj5bjdfr0q4x5lw3 with your app secret 
+                id: ${APP_ID:yourappID} #replace yourappID with your app Id 
+                secret: ${APP_SECRET:yourappsecret} #replace yourappsecret with your app secret 
             api:
                 uri: ${WATSON_WORK_API_URI:https://api.watsonwork.ibm.com} 
                 
@@ -85,7 +90,12 @@ Prerequisite for running the app using IntelliJ IDEA:
             api:
                 uri: ${TICKETMASTER_API_URI:https://app.ticketmaster.com/discovery/v2/}
                 consumer-key: ${TICKETMASTER_CONSUMER_KEY:your-consumer-key}
-                consumer-secret: ${TICKETMASTER_CONSUMER_SECRET:your-consumer-secret}             
+                consumer-secret: ${TICKETMASTER_CONSUMER_SECRET:your-consumer-secret}  
+                
+    google:
+        api:
+            uri: ${GOOGLE_API_URI:https://maps.googleapis.com/}
+            key: ${GOOGLE_API_KEY:yourAPIkey}  #replace yourAPIkey with your google API key
  ```
 7. Right click on `ApplicationBoostrap.java` `->` `Run ApplicationBootstrap..`
 8. Open up terminal where ngrok is installed and run the command `ngrok.exe http 9080` on windows or `./ngrok http 9080` on unix. By default the app runs on `http port 9080`. This exposes your app via a publicly accessible URL. ngrok displays a forwarding url after executing the command above which might look as such: `http://sd2323.ngrok.io`. Take a note of that URL
