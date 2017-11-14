@@ -44,16 +44,16 @@ See deployment for notes on how to deploy the project on a live system.
 
 ### Configuring the Bluemix Watson Conversation service
 
-The sample Weather app uses Watson Conversation to understand natural
+The sample ticketmaster app uses Watson Conversation to understand natural
 language and provide a natural language conversational interface, so
 you need to configure a Watson Conversation Bluemix service for it.
 
 Go to the
-[Bluemix Watson Dashboard](https://console.ng.bluemix.net/dashboard/watson)
+[Bluemix Watson Dashboard](https://console.bluemix.net/developer/watson/services)
 and create a Watson Conversation service.
 
 Note the Watson Conversation service user name and password, as you will
-need to configure the Weather app with them.
+need to configure the ticketmaster app with them.
 
 From the Watson Conversation service page click **Launch tool** to open
 the Watson Conversation tooling, and import the file **watson.json** that 
