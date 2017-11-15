@@ -84,13 +84,15 @@ public class WatsonWorkController {
                     }
                 }
 
-                if (payload.getTargetDialogId().equals(payload.getActionId())) {
-                    // Make a brewerydb call and return a targetedResponse to respond as a targeted Message to the user.
+                //if (payload.getTargetDialogId().equals(payload.getActionId())) {
+                if (ACTION_SELECTED.equalsIgnoreCase(webhookEvent.getAnnotationType()) && "Local_Events".equals(payload.getActionId())) {
+                    // Make a ticketmaster call and return all events
                     ticketmasterService.findEvents(webhookEvent,payloadMessageFocus);
                 } else {
                     if (payload.getActionId().contains("Share")) {
                         ticketmasterService.shareEvent(webhookEvent);
                     } else {
+                        //If user selected a button the actionId will be the event number
                         ticketmasterService.getEvent(webhookEvent);
                     }
                 }
