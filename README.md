@@ -114,7 +114,7 @@ Assuming you have completed steps 1-6 in `Running locally using IntelliJ IDEA`
 2. Install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli/releases) and then Install the [Bluemix CLI](http://clis.ng.bluemix.net/ui/home.html). On Windows, be sure to add the bluemix cli to your PATH.
 3. Run `bluemix login -a https://api.ng.bluemix.net --sso`, and get your single access passcode from the link provdided.
 4. Open a terminal in the project root. Run `./gradlew clean build` on linux/mac or `gradlew clean build` on windows.
-5. Run `cf push my-app-name -p build/libs/watsonwork-brewerydb-java-X.X.X.jar -m 512m` (Tip: Make sure the name you want to use is not taken on Bluemix already, since it must be unique.)
+5. Run `cf push my-app-name -p build/libs/watsonwork-ticketmasterXX.jar -m 512m` (Tip: Make sure the name you want to use is not taken on Bluemix already, since it must be unique.)
 6. When it's finished pushing to bluemix, visit your app's url.
 7. Navigate to your app on [Watson Work Services / Apps](https://developer.watsonwork.ibm.com/apps). Select `Listen to Events`. Edit the webhook configuration with the new publicly available URL from Bluemix. Make sure your callback URL has /webhook path. For example: `https://my-host-name.mybluemix.net/webhook`
 
